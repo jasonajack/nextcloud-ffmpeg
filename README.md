@@ -1,4 +1,5 @@
 ![docker-push](https://github.com/jasonajack/nextcloud-ffmpeg/actions/workflows/build-and-push.yml/badge.svg)
+![increment-release](https://github.com/jasonajack/nextcloud-ffmpeg/actions/workflows/increment-release.yml/badge.svg)
 
 # Overview
 
