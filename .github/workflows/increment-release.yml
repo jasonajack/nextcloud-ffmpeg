@@ -7,6 +7,8 @@ on:
   schedule:
     - cron: "0 0 * * 0"
 
+permissions: write-all
+
 jobs:
   increment_release_version:
     name: Increment the release tag for this repo to trigger a rebuild
@@ -21,3 +23,10 @@ jobs:
         with:
           scheme: semver
           increment: patch
+
+      - name: Create a release
+        uses: action-pack/github-release@v2
+        with:
+          tag: ${{ steps.version.outputs.version }}
+          title: ${{ steps.version.outputs.version }}
+          body: Patch increment rebuild to pull upstream changes.
