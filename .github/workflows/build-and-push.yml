@@ -4,7 +4,7 @@ name: Publish Docker image
 
 on:
   release:
-    types: [published]
+    types: [released, published]
 
 env:
   REGISTRY: ghcr.io
