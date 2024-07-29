@@ -1,0 +1,22 @@
+---
+
+name: Increment Release Version
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+
+jobs:
+  increment_release_version:
+    name: Increment the release tag for this repo to trigger a rebuild
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+    
+      - name: Get next version
+        uses: reecetech/version-increment@main
+        id: version
+        with:
+          scheme: semver
+          increment: patch
